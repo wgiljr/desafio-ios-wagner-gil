@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (5.0.5)
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
   - SwiftHash (2.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire (~> 5.0.3)
   - Kingfisher (~> 5.0)
   - SwiftHash
 
@@ -17,10 +17,10 @@ SPEC REPOS:
     - SwiftHash
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
 
-PODFILE CHECKSUM: bcb99bf8f356454ab061648a78ce082ff0e568fd
+PODFILE CHECKSUM: 015349605170923be60d1ebb179bf0ebc39e48c0
 
 COCOAPODS: 1.9.3
