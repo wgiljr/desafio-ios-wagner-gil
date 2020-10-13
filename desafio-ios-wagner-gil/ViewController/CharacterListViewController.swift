@@ -44,7 +44,10 @@ class CharacterListViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let vc = segue.destination as! Chara
+        if segue.identifier == "heroSegue"{
+            let view = segue.destination as! CharacterDetailsViewController
+            view.selectedCharacter = self.selectedCharacter
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
