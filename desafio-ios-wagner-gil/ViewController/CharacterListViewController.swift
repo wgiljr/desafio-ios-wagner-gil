@@ -19,12 +19,13 @@ class CharacterListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadHeroes()
+        configureNib()
         
     }
     
-    fileprivate func confifureNib(){
+    fileprivate func configureNib(){
         let nibName = UINib(nibName: "CharacterTableViewCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "cell")
+        tableView.register(nibName, forCellReuseIdentifier: "characterCell")
     }
     
     func loadHeroes() {
@@ -51,14 +52,21 @@ class CharacterListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharacterListViewCell
-        cell.prepareCell(with: heroes[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as! CharacterTableViewCell
+        cell.configureCell(with: heroes[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedCharacter = self.heroes[indexPath.row]
         self.performSegue(withIdentifier: "heroSegue", sender: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == heroes.count - 10 && !loadingHeroes && heroes.count != total {
+            currentPage += 1
+            loadHeroes()
+        }
     }
 
 

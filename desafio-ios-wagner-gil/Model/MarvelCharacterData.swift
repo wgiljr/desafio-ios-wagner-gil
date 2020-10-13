@@ -2,7 +2,7 @@
 //  MarvelCharacterData.swift
 //  desafio-ios-wagner-gil
 //
-//  Created by Wagner Gil Junior on 05/08/20.
+//  Created by Wagner Gil Junior on 12/10/20.
 //  Copyright © 2020 Wagner Gil Junior. All rights reserved.
 //
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct MarvelData: Codable {
     let code: Int

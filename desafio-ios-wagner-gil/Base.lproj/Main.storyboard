@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vrt-Jl-lU4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vrt-Jl-lU4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Character List View Controller-->
+        <!--Heróis Marvel-->
         <scene sceneID="iyC-Qt-7BR">
             <objects>
                 <tableViewController id="E8w-cJ-qtc" customClass="CharacterListViewController" customModule="desafio_ios_wagner_gil" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +31,7 @@
                             <outlet property="delegate" destination="E8w-cJ-qtc" id="Q1Q-in-DsA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gqn-0b-P8i"/>
+                    <navigationItem key="navigationItem" title="Heróis Marvel" id="Gqn-0b-P8i"/>
                     <connections>
                         <segue destination="jKl-KI-WWZ" kind="show" identifier="heroSegue" id="gVB-oX-Afw"/>
                     </connections>

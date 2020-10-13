@@ -23,14 +23,32 @@ class MarvelAPI {
         
         let url = basePath + pathCharacters + "offset=\(offset)&limit=\(limit)&" + getCredentials()
         
-        AF.request(url).responseJSON { (response) in
-            guard let data = response.data,
-                let marvelInfo = try? JSONDecoder().decode(MarvelData.self, from: data),
-                marvelInfo.code == 200 else {
-                    onComplete(nil)
-                    return
-            }
-        }
+        AF.request(url)
+                    .validate()
+                    .responseJSON { response in
+                        print(response)
+                        switch response.result {
+                        case .success:
+        //                    guard let jsonData = response.data, let value = response.value, let marvelData = try?  JSONDecoder().decode(MarvelData.self, from: jsonData) else {
+        //                        onComplete(nil)
+        //                        return
+        //                    }
+        //
+        //                    onComplete(marvelData)
+        //                    return
+                            
+                            guard let data = response.data,
+                                let marvelInfo = try? JSONDecoder().decode(MarvelData.self, from: data),
+                                marvelInfo.code == 200 else {
+                                    onComplete(nil)
+                                    return
+                            }
+                            onComplete(marvelInfo)
+                            
+                        case .failure(let error):
+                            print(error)
+                        }
+                }
     }
     
     static func getCredentials() -> String{
